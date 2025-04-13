@@ -1,0 +1,12 @@
+.hero {
+  background-color: var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  height: 270px;
+}
+
+.text {
+  color: var(--color-white);
+}
