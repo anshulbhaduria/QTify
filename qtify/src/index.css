@@ -27,3 +27,14 @@ body {
 button {
   font-family: inherit;
 }
+.swiper-slide {
+  width: auto !important;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: var(--color-white);
+}

@@ -1,12 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
-import Hero from "./components/Hero/Hero";
+import { Outlet } from "react-router-dom";
+import { fetchNewAlbums, fetchTopAlbums } from "./api/api";
+import { StyledEngineProvider } from "@mui/material";
 
 function App() {
+  const [data, setData] = useState({});
+
+  const generateData = async (key, source) => {
+    const data = await source();
+    setData((prevState) => ({
+      ...prevState,
+      [key]: data,
+    }));
+  };
+
+  useEffect(() => {
+    generateData("topAlbums", fetchTopAlbums);
+    generateData("newAlbums", fetchNewAlbums);
+  }, []);
+
+  const { topAlbums = [], newAlbums = [] } = data;
+
   return (
     <>
-      <Navbar />
-      <Hero />
+      <StyledEngineProvider>
+        <Navbar />
+        <Outlet context={{ data: { topAlbums, newAlbums } }} />
+      </StyledEngineProvider>
     </>
   );
 }
