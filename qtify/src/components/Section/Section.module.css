@@ -19,3 +19,7 @@
   flex-wrap: wrap;
   gap: 40px;
 }
+
+.filterWrapper {
+  margin-top: 15px;
+}
