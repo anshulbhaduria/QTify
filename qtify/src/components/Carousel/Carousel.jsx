@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import CarouselRightNavigation from "./CarouselRightNavigation/CarouselRightNavigation";
-import CarouselLeftNavigation from "./CarouselLeftNavigation/CarouselLeftNavigation";
+import CarouselLeftNavigation from "./CarouselLeftNavigation/CarouselLeftavigation";
 import "swiper/css";
 import "swiper/css/navigation";
 import styles from "./Carousel.module.css";
@@ -10,8 +10,7 @@ import styles from "./Carousel.module.css";
 const Controls = ({ data }) => {
   const swiper = useSwiper();
   useEffect(() => {
-    // Reset to first slide when data changes
-    swiper.slideTo(0, 0);
+    swiper.slideTo(0, 1);
   }, [data, swiper]);
   return null;
 };
