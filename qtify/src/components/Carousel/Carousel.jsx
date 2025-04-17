@@ -18,9 +18,9 @@ function Carousel({ data, renderComponent }) {
     <div className={styles.wrapper}>
       <Swiper
         style={{ padding: "0px 20px" }}
-        intialSlide={0}
+        initialSlide={0}
         modules={{ Navigation }}
-        slidePerView={"auto"}
+        slidesPerView={"auto"}
         spaceBetween={40}
         allowTouchMove
       >
