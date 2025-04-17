@@ -10,7 +10,7 @@ import styles from "./Carousel.module.css";
 const Controls = ({ data }) => {
   const swiper = useSwiper();
   useEffect(() => {
-    swiper.slideTo(0, 1);
+    swiper.slideTo(0, 0);
   }, [data, swiper]);
   return null;
 };
@@ -22,7 +22,7 @@ function Carousel({ data, renderComponent }) {
         style={{ padding: "0px 20px" }}
         initialSlide={0}
         modules={[Navigation]}
-        slidesPerView={5}
+        slidesPerView={"auto"}
         spaceBetween={40}
         allowTouchMove
       >
